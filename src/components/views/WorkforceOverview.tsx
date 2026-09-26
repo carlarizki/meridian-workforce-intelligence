@@ -415,6 +415,95 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       </div>
 
       {/* ========================================================================= */}
+      {/* 2B. THE SHIFT: JOB TITLE LENS VS CAPABILITY LENS (AHA MOMENT)            */}
+      {/* ========================================================================= */}
+      <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div className="px-5 py-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+              <Sparkles className="w-4 h-4 text-amber-500" />
+              <span>Orang yang sama, dibaca dengan dua cara berbeda</span>
+            </h2>
+            <p className="text-xs text-slate-500 mt-0.5">
+              Yang berubah bukan orangnya, tapi cara kita menilai mereka.
+            </p>
+          </div>
+          <button
+            onClick={() => onNavigate('capabilities')}
+            className="text-xs text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1 self-start sm:self-auto"
+          >
+            <span>Lihat peta kemampuan</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+          {/* Lens 1: Job Title */}
+          <div className="lg:col-span-5 p-5 bg-slate-50/70">
+            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              <Briefcase className="w-3.5 h-3.5" />
+              <span>Dibaca dari nama jabatan</span>
+            </div>
+            <div className="mt-3 text-3xl font-semibold text-rose-600 tracking-tight">
+              4.200 <span className="text-sm text-slate-400 font-normal">staf dianggap habis perannya</span>
+            </div>
+            <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              Jabatan &ldquo;Petugas Catat Meter&rdquo; hilang begitu meteran mengirim angka sendiri.
+              Dengan cara baca ini, tidak ada jalan lain selain pengurangan tenaga kerja.
+            </p>
+            <div className="mt-3 space-y-1.5">
+              {['Nama jabatan hilang dari struktur', 'Pengalaman lapangan tidak terhitung', 'Ujungnya: negosiasi pesangon'].map((t) => (
+                <div key={t} className="flex items-start gap-2 text-[11px] text-slate-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 shrink-0" />
+                  <span>{t}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className="lg:col-span-2 flex items-center justify-center py-3 bg-white">
+            <div className="flex flex-col items-center gap-1">
+              <div className="w-9 h-9 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center">
+                <ArrowRight className="w-4 h-4 text-blue-600 rotate-90 lg:rotate-0" />
+              </div>
+              <span className="text-[9px] font-bold uppercase tracking-wider text-blue-600">Meridian</span>
+            </div>
+          </div>
+
+          {/* Lens 2: Capability */}
+          <div className="lg:col-span-5 p-5 bg-blue-50/50 border-l border-blue-100">
+            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-blue-700">
+              <Layers className="w-3.5 h-3.5" />
+              <span>Dibaca dari kemampuan nyata</span>
+            </div>
+            <div className="mt-3 text-3xl font-semibold text-emerald-600 tracking-tight">
+              85% <span className="text-sm text-slate-500 font-normal">punya jalur ke peran baru</span>
+            </div>
+            <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              Keahlian yang sudah mereka pakai tiap hari &mdash; kelistrikan tegangan rendah, keselamatan
+              kerja, hafal wilayah, berhadapan langsung dengan pelanggan &mdash; masih terpakai di unit baru.
+            </p>
+            <div className="mt-3 space-y-1.5">
+              {[
+                { r: 'Teknisi jaringan & gardu cerdas', n: '2.450 kursi' },
+                { r: 'Operator sensor & telemetri', n: '1.350 kursi' },
+                { r: 'Teknisi PLTS atap & energi baru', n: '1.200 kursi' },
+              ].map((x) => (
+                <div key={x.r} className="flex items-center justify-between text-[11px] bg-white border border-blue-100 rounded-md px-2.5 py-1.5">
+                  <span className="flex items-center gap-1.5 font-medium text-slate-800">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    {x.r}
+                  </span>
+                  <span className="font-mono font-bold text-slate-700">{x.n}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================================================= */}
       {/* 3. TRANSITION STATUS SUMMARY (CLEAN PIPELINE BAR + 5 CARDS)               */}
       {/* ========================================================================= */}
       <div className="bg-white rounded-xl p-5 border border-slate-200 space-y-4">
