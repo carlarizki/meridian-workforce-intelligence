@@ -13,7 +13,6 @@ import {
   Info,
   Calendar,
   Building2,
-  Presentation,
 } from 'lucide-react';
 import { NavTab } from '../../types/meridian';
 import { PILOT_METRICS, ECONOMICS_DATA } from '../../data/meridianData';
