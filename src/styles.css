@@ -207,3 +207,16 @@
   --color-purple-900: #3a2c50;
   --color-purple-950: #221a32;
 }
+
+/*
+ * Hybrid typography (Option B), applied app-wide.
+ * Plus Jakarta Sans carries everything an executive reads first —
+ * page/section headings and large KPI figures. Body copy, tables,
+ * badges and small labels stay on the system sans stack, which is
+ * tuned for dense operational data.
+ */
+h1, h2, h3,
+.text-3xl, .text-4xl, .text-5xl, .text-6xl {
+  font-family: var(--font-jakarta);
+  letter-spacing: -0.015em;
+}
