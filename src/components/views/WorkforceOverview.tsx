@@ -560,7 +560,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
                   {path.count.toLocaleString('id-ID')}{' '}
                   <span className="text-[10px] text-slate-500 font-normal">Staf</span>
                 </div>
-                <p className="text-[11px] text-slate-600 mt-1 leading-snug line-clamp-2">
+                <p className="text-[11px] text-slate-600 mt-1 leading-snug">
                   {path.description}
                 </p>
               </div>
