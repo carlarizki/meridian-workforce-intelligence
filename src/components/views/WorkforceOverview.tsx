@@ -66,7 +66,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-emerald-50/60 hover:bg-emerald-50',
       borderColor: 'border-emerald-200',
       textColor: 'text-emerald-800',
-      description: 'Fit ≥75%, feasibility High (Rule #2). Siap mutasi langsung.',
+      description: 'Kompetensi sudah memenuhi syarat. Siap mutasi tanpa pelatihan tambahan.',
       targetRole: 'Teknisi Smart Grid & Gardu',
       actionTab: 'redeployment' as NavTab,
     },
@@ -79,7 +79,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-sky-50/60 hover:bg-sky-50',
       borderColor: 'border-sky-200',
       textColor: 'text-sky-800',
-      description: 'Gap terukur (Rule #4). Pelatihan intensif 8-12 minggu.',
+      description: 'Kurang sedikit keahlian. Pelatihan 8-12 minggu, lalu pindah peran.',
       targetRole: 'Operator Gateway IoT & PLTS',
       actionTab: 'learning' as NavTab,
     },
@@ -92,7 +92,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-amber-50/60 hover:bg-amber-50',
       borderColor: 'border-amber-200',
       textColor: 'text-amber-800',
-      description: 'Fit/feasibility menengah (Rule #5). Pelatihan 12-24 minggu.',
+      description: 'Butuh pelatihan lebih panjang, 12-24 minggu, di unit saat ini.',
       targetRole: 'Inspektur Sambungan & K3',
       actionTab: 'jobs' as NavTab,
     },
@@ -105,7 +105,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-purple-50/60 hover:bg-purple-50',
       borderColor: 'border-purple-200',
       textColor: 'text-purple-800',
-      description: 'Evidence Low/Unknown (Rule #1). Data belum lengkap, re-assessment cepat.',
+      description: 'Data kompetensi belum lengkap. Perlu asesmen ulang sebelum diputuskan.',
       targetRole: 'Asesmen Ulang SKTTK',
       actionTab: 'capabilities' as NavTab,
     },
@@ -118,7 +118,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-rose-50/60 hover:bg-rose-50',
       borderColor: 'border-rose-200',
       textColor: 'text-rose-800',
-      description: 'Fit & feasibility rendah (Rule #3). Transisi sukarela, PP 35/2021.',
+      description: 'Pilihan sukarela: pensiun dini atau alih profesi, dengan pendampingan.',
       targetRole: 'Konseling & Outplacement Pensiun',
       actionTab: 'impact' as NavTab,
     },
@@ -422,10 +422,10 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
           <div>
             <h2 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
               <GitMerge className="w-4 h-4 text-blue-600" />
-              <span>Status Transisi 6.000 Staf Pilot Lapangan</span>
+              <span>Ke mana 6.000 staf ini akan diarahkan</span>
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
-              Hasil pemetaan kapabilitas & keputusan jalur alih tugas deterministik:
+              Lima jalur transisi. Tidak ada satu pun yang berujung PHK sepihak.
             </p>
           </div>
 
