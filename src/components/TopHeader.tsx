@@ -1,10 +1,11 @@
 import React from 'react';
-import { ChevronRight, Layers, Sparkles } from 'lucide-react';
+import { ChevronRight, Menu } from 'lucide-react';
 import { NavTab } from '../types/meridian';
 
 interface TopHeaderProps {
   activeTab: NavTab;
   setActiveTab?: (tab: NavTab) => void;
+  onOpenMenu?: () => void;
 }
 
 const TAB_TITLES: Record<
@@ -85,19 +86,27 @@ const TAB_TITLES: Record<
   },
 };
 
-export const TopHeader: React.FC<TopHeaderProps> = ({ activeTab }) => {
+export const TopHeader: React.FC<TopHeaderProps> = ({ activeTab, onOpenMenu }) => {
   const current = TAB_TITLES[activeTab] || TAB_TITLES.workforce;
 
   return (
-    <header className="sticky top-0 z-20 bg-white border-b border-slate-200 px-8 py-5 flex items-center justify-between font-sans">
-      <div className="flex flex-col gap-1">
-        <div className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
+    <header className="sticky top-0 z-20 grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 border-b border-slate-200 bg-white px-4 py-4 font-sans sm:px-6 md:grid-cols-[minmax(0,1fr)_auto] md:px-8 md:py-5">
+      <button
+        type="button"
+        onClick={onOpenMenu}
+        className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-slate-200 bg-white text-slate-700 transition-colors hover:bg-slate-50 md:hidden"
+        aria-label="Buka navigasi"
+        aria-controls="primary-navigation"
+      >
+        <Menu className="h-4 w-4" />
+      </button>
+      <div className="flex min-w-0 flex-col gap-1">
+        <div className="flex min-w-0 items-center gap-1.5 text-xs text-slate-400 font-medium">
           <span>Project Meridian</span>
           <ChevronRight className="w-3 h-3 text-slate-300" />
-          <span className="text-slate-500">{current.title}</span>
+          <span className="truncate text-slate-500">{current.title}</span>
         </div>
-        <h1 className="text-2xl font-semibold text-slate-900 tracking-tight font-jakarta">
-
+        <h1 className="truncate text-xl font-semibold text-slate-900 tracking-tight font-jakarta sm:text-2xl">
           {current.title}
         </h1>
         <p className="text-sm text-slate-500 line-clamp-1">
@@ -106,7 +115,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({ activeTab }) => {
       </div>
 
       {/* Subtle indicator tag */}
-      <div className="flex items-center gap-2">
+      <div className="hidden items-center gap-2 md:flex">
         <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1 border border-slate-200 rounded-full text-[11px] text-slate-500 font-medium">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
           <span>Executive Prototype</span>

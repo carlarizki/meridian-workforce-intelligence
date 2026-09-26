@@ -220,10 +220,11 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
           </div>
 
           {/* Right: 3 Metric Counters with Interactive Hover Tooltips */}
-          <div className="flex items-center gap-2 sm:gap-3 text-xs shrink-0 flex-wrap sm:flex-nowrap">
+          <div className="grid w-full grid-cols-1 gap-2 text-xs sm:grid-cols-3 lg:w-auto">
             {/* Metric 1: Smart Meter Terpasang */}
             <div
               className="relative group bg-white/5 hover:bg-white/10 rounded-lg px-3 py-2 cursor-pointer transition-colors"
+              onClick={() => setActiveTooltip(activeTooltip === 'meter' ? null : 'meter')}
               onMouseEnter={() => setActiveTooltip('meter')}
               onMouseLeave={() => setActiveTooltip(null)}
             >
@@ -238,7 +239,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
 
               {/* Tooltip Card */}
               {activeTooltip === 'meter' && (
-                <div className="absolute right-0 sm:right-auto sm:left-0 top-full mt-2 w-72 bg-white text-slate-800 p-3 rounded-xl shadow-xl border border-slate-200 z-50 text-xs animate-in fade-in zoom-in-95 duration-150">
+                <div className="absolute left-0 top-full z-50 mt-2 w-[min(18rem,calc(100vw-3rem))] rounded-xl border border-slate-200 bg-white p-3 text-xs text-slate-800 shadow-xl animate-in fade-in zoom-in-95 duration-150">
                   <div className="font-bold text-slate-900 flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
                     <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                     <span>Smart Meter Terpasang</span>
@@ -256,6 +257,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             {/* Metric 2: Rute Manual Teralihkan */}
             <div
               className="relative group bg-white/5 hover:bg-white/10 rounded-lg px-3 py-2 cursor-pointer transition-colors"
+              onClick={() => setActiveTooltip(activeTooltip === 'route' ? null : 'route')}
               onMouseEnter={() => setActiveTooltip('route')}
               onMouseLeave={() => setActiveTooltip(null)}
             >
@@ -269,7 +271,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
 
               {/* Tooltip Card */}
               {activeTooltip === 'route' && (
-                <div className="absolute right-0 sm:right-auto sm:left-0 top-full mt-2 w-72 bg-white text-slate-800 p-3 rounded-xl shadow-xl border border-slate-200 z-50 text-xs animate-in fade-in zoom-in-95 duration-150">
+                <div className="absolute left-0 top-full z-50 mt-2 w-[min(18rem,calc(100vw-3rem))] rounded-xl border border-slate-200 bg-white p-3 text-xs text-slate-800 shadow-xl animate-in fade-in zoom-in-95 duration-150">
                   <div className="font-bold text-slate-900 flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                     <span>Rute Manual Teralihkan</span>
@@ -287,6 +289,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             {/* Metric 3: Total Output Pelatihan */}
             <div
               className="relative group bg-white/5 hover:bg-white/10 rounded-lg px-3 py-2 cursor-pointer transition-colors"
+              onClick={() => setActiveTooltip(activeTooltip === 'training' ? null : 'training')}
               onMouseEnter={() => setActiveTooltip('training')}
               onMouseLeave={() => setActiveTooltip(null)}
             >
@@ -300,7 +303,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
 
               {/* Tooltip Card */}
               {activeTooltip === 'training' && (
-                <div className="absolute right-0 top-full mt-2 w-72 bg-white text-slate-800 p-3 rounded-xl shadow-xl border border-slate-200 z-50 text-xs animate-in fade-in zoom-in-95 duration-150">
+                <div className="absolute left-0 top-full z-50 mt-2 w-[min(18rem,calc(100vw-3rem))] rounded-xl border border-slate-200 bg-white p-3 text-xs text-slate-800 shadow-xl animate-in fade-in zoom-in-95 duration-150">
                   <div className="font-bold text-slate-900 flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
                     <span className="w-2 h-2 rounded-full bg-sky-500"></span>
                     <span>Total Output Pelatihan</span>
@@ -321,7 +324,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       {/* ========================================================================= */}
       {/* 2. 4 CLEAN HIGH-LEVEL METRICS (CLEAR & LIGHT, NO JARGON)                 */}
       {/* ========================================================================= */}
-      <div className="bg-white rounded-xl border border-slate-200 grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-slate-100">
+      <div className="grid grid-cols-1 divide-y divide-slate-100 rounded-xl border border-slate-200 bg-white sm:grid-cols-2 sm:divide-x lg:grid-cols-4 lg:divide-y-0">
         {/* Metric 1: Total Tenaga Kerja */}
         <div className="p-5">
           <div className="flex items-center gap-1.5 text-slate-500 text-xs font-medium">
@@ -353,6 +356,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
         {/* Metric 3: Retensi Karyawan (Tanpa PHK) */}
         <div
           className="relative p-5 cursor-pointer group"
+          onClick={() => setActiveTooltip(activeTooltip === 'retention' ? null : 'retention')}
           onMouseEnter={() => setActiveTooltip('retention')}
           onMouseLeave={() => setActiveTooltip(null)}
         >
@@ -370,7 +374,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
 
           {/* Explainer Tooltip for Retensi Modal Insani */}
           {activeTooltip === 'retention' && (
-            <div className="absolute left-0 top-full mt-2 w-80 bg-white text-slate-800 p-3.5 rounded-xl shadow-xl border border-slate-200 z-50 text-xs animate-in fade-in zoom-in-95 duration-150">
+            <div className="absolute left-0 top-full z-50 mt-2 w-[min(20rem,calc(100vw-3rem))] rounded-xl border border-slate-200 bg-white p-3.5 text-xs text-slate-800 shadow-xl animate-in fade-in zoom-in-95 duration-150">
               <div className="font-bold text-slate-900 flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>Rincian Retensi (75%)</span>
@@ -581,10 +585,10 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       {/* ========================================================================= */}
       <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
         {/* Navigation Tabs */}
-        <div className="flex border-b border-slate-200 bg-slate-50/70 px-4 pt-2 gap-2 text-xs">
+        <div className="flex gap-2 overflow-x-auto border-b border-slate-200 bg-slate-50/70 px-3 pt-2 text-xs sm:px-4">
           <button
             onClick={() => setActiveSubTab('regional')}
-            className={`pb-2.5 px-3 font-semibold transition-colors border-b-2 flex items-center gap-1.5 ${
+            className={`shrink-0 pb-2.5 px-3 font-semibold transition-colors border-b-2 flex items-center gap-1.5 ${
               activeSubTab === 'regional'
                 ? 'border-blue-600 text-blue-700 bg-white rounded-t-lg'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -596,7 +600,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
 
           <button
             onClick={() => setActiveSubTab('exposure')}
-            className={`pb-2.5 px-3 font-semibold transition-colors border-b-2 flex items-center gap-1.5 ${
+            className={`shrink-0 pb-2.5 px-3 font-semibold transition-colors border-b-2 flex items-center gap-1.5 ${
               activeSubTab === 'exposure'
                 ? 'border-blue-600 text-blue-700 bg-white rounded-t-lg'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -608,7 +612,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
 
           <button
             onClick={() => setActiveSubTab('process')}
-            className={`pb-2.5 px-3 font-semibold transition-colors border-b-2 flex items-center gap-1.5 ${
+            className={`shrink-0 pb-2.5 px-3 font-semibold transition-colors border-b-2 flex items-center gap-1.5 ${
               activeSubTab === 'process'
                 ? 'border-blue-600 text-blue-700 bg-white rounded-t-lg'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -636,7 +640,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
           <div className="p-5 grid grid-cols-1 lg:grid-cols-12 gap-4 animate-in fade-in duration-150">
             {/* Left: 6 Regional Operating Units */}
             <div className="lg:col-span-7 space-y-3">
-              <div className="flex items-center justify-between pb-1">
+              <div className="flex flex-col gap-2 pb-1 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                     Distribusi 6.000 Staf per Regional Operating Unit
@@ -792,7 +796,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
               )}
 
               <div className="space-y-2 text-xs">
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-rose-50/70 border border-rose-100">
+                <div className="flex flex-col gap-1 p-2.5 rounded-lg bg-rose-50/70 border border-rose-100 sm:flex-row sm:items-center sm:justify-between">
                   <span className="flex items-center gap-2 font-medium text-rose-800">
                     <span className="w-2 h-2 rounded-full bg-rose-500"></span>
                     <span>High Exposure (≥70%) — Termasuk 6.000 Staf Pilot</span>
@@ -800,7 +804,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
                   <span className="font-mono font-bold text-rose-700">25% (13.000 Staf)</span>
                 </div>
 
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-amber-50/70 border border-amber-100">
+                <div className="flex flex-col gap-1 p-2.5 rounded-lg bg-amber-50/70 border border-amber-100 sm:flex-row sm:items-center sm:justify-between">
                   <span className="flex items-center gap-2 font-medium text-amber-800">
                     <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                     <span>Medium Exposure (40-69%)</span>
@@ -808,7 +812,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
                   <span className="font-mono font-bold text-amber-700">40% (20.800 Staf)</span>
                 </div>
 
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-100">
+                <div className="flex flex-col gap-1 p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-100 sm:flex-row sm:items-center sm:justify-between">
                   <span className="flex items-center gap-2 font-medium text-emerald-800">
                     <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                     <span>Low Exposure (&lt;40%)</span>
@@ -919,7 +923,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
         {/* Tab 3: Real-Time Field Activity Stream */}
         {activeSubTab === 'activity' && (
           <div className="p-5 space-y-3 animate-in fade-in duration-150">
-            <div className="flex items-center justify-between pb-1 border-b border-slate-100">
+            <div className="flex flex-col gap-2 border-b border-slate-100 pb-1 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                   Aliran Peristiwa Lapangan & Pembaruan Sertifikasi
@@ -933,7 +937,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
 
             <div className="divide-y divide-slate-100 text-xs">
               {liveEvents.map((evt) => (
-                <div key={evt.id} className="py-2.5 flex items-start gap-3 hover:bg-slate-50 rounded-lg px-2 transition-colors">
+                <div key={evt.id} className="flex flex-col gap-1 rounded-lg px-2 py-2.5 transition-colors hover:bg-slate-50 sm:flex-row sm:items-start sm:gap-3">
                   <span className="font-mono font-bold text-slate-400 text-[11px] shrink-0 mt-0.5">
                     {evt.time}
                   </span>
