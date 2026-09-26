@@ -66,7 +66,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-emerald-50/60 hover:bg-emerald-50',
       borderColor: 'border-emerald-200',
       textColor: 'text-emerald-800',
-      description: 'Fit ≥75%, feasibility High (Rule #2). Siap mutasi langsung.',
+      description: 'Kompetensi sudah memenuhi syarat. Siap mutasi tanpa pelatihan tambahan.',
       targetRole: 'Teknisi Smart Grid & Gardu',
       actionTab: 'redeployment' as NavTab,
     },
@@ -79,7 +79,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-sky-50/60 hover:bg-sky-50',
       borderColor: 'border-sky-200',
       textColor: 'text-sky-800',
-      description: 'Gap terukur (Rule #4). Pelatihan intensif 8-12 minggu.',
+      description: 'Kurang sedikit keahlian. Pelatihan 8-12 minggu, lalu pindah peran.',
       targetRole: 'Operator Gateway IoT & PLTS',
       actionTab: 'learning' as NavTab,
     },
@@ -92,7 +92,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-amber-50/60 hover:bg-amber-50',
       borderColor: 'border-amber-200',
       textColor: 'text-amber-800',
-      description: 'Fit/feasibility menengah (Rule #5). Pelatihan 12-24 minggu.',
+      description: 'Butuh pelatihan lebih panjang, 12-24 minggu, di unit saat ini.',
       targetRole: 'Inspektur Sambungan & K3',
       actionTab: 'jobs' as NavTab,
     },
@@ -105,7 +105,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-purple-50/60 hover:bg-purple-50',
       borderColor: 'border-purple-200',
       textColor: 'text-purple-800',
-      description: 'Evidence Low/Unknown (Rule #1). Data belum lengkap, re-assessment cepat.',
+      description: 'Data kompetensi belum lengkap. Perlu asesmen ulang sebelum diputuskan.',
       targetRole: 'Asesmen Ulang SKTTK',
       actionTab: 'capabilities' as NavTab,
     },
@@ -118,7 +118,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       bgColor: 'bg-rose-50/60 hover:bg-rose-50',
       borderColor: 'border-rose-200',
       textColor: 'text-rose-800',
-      description: 'Fit & feasibility rendah (Rule #3). Transisi sukarela, PP 35/2021.',
+      description: 'Pilihan sukarela: pensiun dini atau alih profesi, dengan pendampingan.',
       targetRole: 'Konseling & Outplacement Pensiun',
       actionTab: 'impact' as NavTab,
     },
@@ -415,6 +415,95 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
       </div>
 
       {/* ========================================================================= */}
+      {/* 2B. THE SHIFT: JOB TITLE LENS VS CAPABILITY LENS (AHA MOMENT)            */}
+      {/* ========================================================================= */}
+      <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div className="px-5 py-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+              <Sparkles className="w-4 h-4 text-amber-500" />
+              <span>Orang yang sama, dibaca dengan dua cara berbeda</span>
+            </h2>
+            <p className="text-xs text-slate-500 mt-0.5">
+              Yang berubah bukan orangnya, tapi cara kita menilai mereka.
+            </p>
+          </div>
+          <button
+            onClick={() => onNavigate('capabilities')}
+            className="text-xs text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1 self-start sm:self-auto"
+          >
+            <span>Lihat peta kemampuan</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+          {/* Lens 1: Job Title */}
+          <div className="lg:col-span-5 p-5 bg-slate-50/70">
+            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              <Briefcase className="w-3.5 h-3.5" />
+              <span>Dibaca dari nama jabatan</span>
+            </div>
+            <div className="mt-3 text-3xl font-semibold text-rose-600 tracking-tight">
+              4.200 <span className="text-sm text-slate-400 font-normal">staf dianggap habis perannya</span>
+            </div>
+            <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              Jabatan &ldquo;Petugas Catat Meter&rdquo; hilang begitu meteran mengirim angka sendiri.
+              Dengan cara baca ini, tidak ada jalan lain selain pengurangan tenaga kerja.
+            </p>
+            <div className="mt-3 space-y-1.5">
+              {['Nama jabatan hilang dari struktur', 'Pengalaman lapangan tidak terhitung', 'Ujungnya: negosiasi pesangon'].map((t) => (
+                <div key={t} className="flex items-start gap-2 text-[11px] text-slate-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 shrink-0" />
+                  <span>{t}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className="lg:col-span-2 flex items-center justify-center py-3 bg-white">
+            <div className="flex flex-col items-center gap-1">
+              <div className="w-9 h-9 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center">
+                <ArrowRight className="w-4 h-4 text-blue-600 rotate-90 lg:rotate-0" />
+              </div>
+              <span className="text-[9px] font-bold uppercase tracking-wider text-blue-600">Meridian</span>
+            </div>
+          </div>
+
+          {/* Lens 2: Capability */}
+          <div className="lg:col-span-5 p-5 bg-blue-50/50 border-l border-blue-100">
+            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-blue-700">
+              <Layers className="w-3.5 h-3.5" />
+              <span>Dibaca dari kemampuan nyata</span>
+            </div>
+            <div className="mt-3 text-3xl font-semibold text-emerald-600 tracking-tight">
+              85% <span className="text-sm text-slate-500 font-normal">punya jalur ke peran baru</span>
+            </div>
+            <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              Keahlian yang sudah mereka pakai tiap hari &mdash; kelistrikan tegangan rendah, keselamatan
+              kerja, hafal wilayah, berhadapan langsung dengan pelanggan &mdash; masih terpakai di unit baru.
+            </p>
+            <div className="mt-3 space-y-1.5">
+              {[
+                { r: 'Teknisi jaringan & gardu cerdas', n: '2.450 kursi' },
+                { r: 'Operator sensor & telemetri', n: '1.350 kursi' },
+                { r: 'Teknisi PLTS atap & energi baru', n: '1.200 kursi' },
+              ].map((x) => (
+                <div key={x.r} className="flex items-center justify-between text-[11px] bg-white border border-blue-100 rounded-md px-2.5 py-1.5">
+                  <span className="flex items-center gap-1.5 font-medium text-slate-800">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    {x.r}
+                  </span>
+                  <span className="font-mono font-bold text-slate-700">{x.n}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================================================= */}
       {/* 3. TRANSITION STATUS SUMMARY (CLEAN PIPELINE BAR + 5 CARDS)               */}
       {/* ========================================================================= */}
       <div className="bg-white rounded-xl p-5 border border-slate-200 space-y-4">
@@ -422,10 +511,10 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
           <div>
             <h2 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
               <GitMerge className="w-4 h-4 text-blue-600" />
-              <span>Status Transisi 6.000 Staf Pilot Lapangan</span>
+              <span>Ke mana 6.000 staf ini akan diarahkan</span>
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
-              Hasil pemetaan kapabilitas & keputusan jalur alih tugas deterministik:
+              Lima jalur transisi. Tidak ada satu pun yang berujung PHK sepihak.
             </p>
           </div>
 
@@ -471,7 +560,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
                   {path.count.toLocaleString('id-ID')}{' '}
                   <span className="text-[10px] text-slate-500 font-normal">Staf</span>
                 </div>
-                <p className="text-[11px] text-slate-600 mt-1 leading-snug line-clamp-2">
+                <p className="text-[11px] text-slate-600 mt-1 leading-snug">
                   {path.description}
                 </p>
               </div>
@@ -502,7 +591,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
-            <span>Peta 6 Regional & Formasi Peran Baru</span>
+            <span>Sebaran Wilayah</span>
           </button>
 
           <button
@@ -514,7 +603,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             }`}
           >
             <Compass className="w-3.5 h-3.5" />
-            <span>AI Exposure & 9 Job Families</span>
+            <span>Dampak Otomasi</span>
           </button>
 
           <button
@@ -526,7 +615,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             }`}
           >
             <GitMerge className="w-3.5 h-3.5" />
-            <span>Proses Bisnis: Sebelum vs Sesudah</span>
+            <span>Sebelum &amp; Sesudah</span>
           </button>
 
           <button
@@ -538,7 +627,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             }`}
           >
             <Activity className="w-3.5 h-3.5" />
-            <span>Log Aktivitas Lapangan Real-Time</span>
+            <span>Aktivitas Lapangan</span>
           </button>
         </div>
 
@@ -747,7 +836,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
                 Proses Pencatatan & Rekonsiliasi Meter Pelanggan
               </h3>
               <p className="text-xs text-slate-500">
-                Satu proses bisnis konkret dari pilot Field Metering — langkah demi langkah, bukan cuma angka hasil akhir.
+                Satu contoh nyata: bagaimana pekerjaan ini berubah, langkah demi langkah.
               </p>
             </div>
 
@@ -872,6 +961,33 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             </div>
           </div>
         )}
+      </div>
+
+      {/* ========================================================================= */}
+      {/* 5. METHODOLOGY & INDUSTRIAL RELATIONS NOTE                              */}
+      {/* ========================================================================= */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div className="rounded-xl border border-slate-200 bg-white p-4">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900">
+            <Info className="w-3.5 h-3.5 text-slate-500" />
+            <span>Dari mana angka biayanya</span>
+          </div>
+          <p className="text-[11px] text-slate-600 leading-relaxed mt-1.5">
+            Kami tidak mengakses data gaji. Semua hitungan biaya memakai angka acuan rata-rata
+            per golongan, jadi sensitif atau tidaknya data payroll tetap aman.
+          </p>
+        </div>
+
+        <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-900">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Kesepakatan dengan serikat pekerja</span>
+          </div>
+          <p className="text-[11px] text-emerald-900/80 leading-relaxed mt-1.5">
+            Tidak ada PHK sepihak. Setiap keputusan lewat dialog bipartit, pelatihan ulang tanpa
+            potong hak dasar, dan program keluar hanya jika pekerja sendiri yang memilih.
+          </p>
+        </div>
       </div>
     </div>
   );
