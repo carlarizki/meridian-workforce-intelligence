@@ -17,7 +17,7 @@ export const PathwaysView: React.FC = () => {
   const [selectedClusterId, setSelectedClusterId] = useState('smart-grid');
 
   const selectedCluster =
-    RECEIVING_CLUSTERS.find((c) => c.id === selectedClusterId) || RECEIVING_CLUSTERS[0];
+    RECEIVING_CLUSTERS.find((c) => c.id === selectedClusterId) || RECEIVING_CLUSTERS[0]!;
 
   return (
     <div className="space-y-8 pb-12">
