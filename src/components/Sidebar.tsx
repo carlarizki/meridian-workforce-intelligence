@@ -99,18 +99,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         <button
-          onClick={() => setActiveTab('deck')}
-          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[13px] font-medium transition-colors text-left ${
-            activeTab === 'deck'
-              ? 'bg-navy-light text-white'
-              : 'text-sidebar-text-muted hover:text-sidebar-text hover:bg-navy-light/60'
-          }`}
-        >
-          <Presentation className={`w-4 h-4 shrink-0 ${activeTab === 'deck' ? 'text-primary' : 'text-sidebar-text-muted'}`} />
-          <span className="truncate">Executive Deck</span>
-        </button>
-
-        <button
           onClick={onOpenBriefing}
           className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[13px] font-medium text-sidebar-text-muted hover:text-sidebar-text hover:bg-navy-light/60 transition-colors text-left"
         >
