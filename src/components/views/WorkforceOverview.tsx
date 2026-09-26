@@ -195,7 +195,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
   ];
 
   return (
-    <div className="font-jakarta space-y-6 pb-12">
+    <div className="space-y-6 pb-12">
       {/* ========================================================================= */}
       {/* 1. REFINED REAL-TIME OPERATIONAL PULSE BAR WITH HOVER TOOLTIPS           */}
       {/* ========================================================================= */}
@@ -206,7 +206,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             <Radio className="w-4 h-4 text-emerald-400 shrink-0" />
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-[11px] font-semibold text-slate-200 tracking-wide uppercase">
+                <span className="text-[11px] font-semibold text-slate-200 tracking-wide uppercase font-jakarta">
                   Live Operational Pulse
                 </span>
                 <span className="text-[11px] text-slate-500 font-mono">
