@@ -591,7 +591,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
-            <span>Peta 6 Regional & Formasi Peran Baru</span>
+            <span>Sebaran Wilayah</span>
           </button>
 
           <button
@@ -603,7 +603,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             }`}
           >
             <Compass className="w-3.5 h-3.5" />
-            <span>AI Exposure & 9 Job Families</span>
+            <span>Dampak Otomasi</span>
           </button>
 
           <button
@@ -615,7 +615,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             }`}
           >
             <GitMerge className="w-3.5 h-3.5" />
-            <span>Proses Bisnis: Sebelum vs Sesudah</span>
+            <span>Sebelum &amp; Sesudah</span>
           </button>
 
           <button
@@ -627,7 +627,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
             }`}
           >
             <Activity className="w-3.5 h-3.5" />
-            <span>Log Aktivitas Lapangan Real-Time</span>
+            <span>Aktivitas Lapangan</span>
           </button>
         </div>
 
@@ -836,7 +836,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
                 Proses Pencatatan & Rekonsiliasi Meter Pelanggan
               </h3>
               <p className="text-xs text-slate-500">
-                Satu proses bisnis konkret dari pilot Field Metering — langkah demi langkah, bukan cuma angka hasil akhir.
+                Satu contoh nyata: bagaimana pekerjaan ini berubah, langkah demi langkah.
               </p>
             </div>
 
