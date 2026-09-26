@@ -89,18 +89,18 @@ export const TopHeader: React.FC<TopHeaderProps> = ({ activeTab }) => {
   const current = TAB_TITLES[activeTab] || TAB_TITLES.workforce;
 
   return (
-    <header
-      className={`sticky top-0 z-20 bg-white border-b border-slate-200 px-8 py-5 flex items-center justify-between ${
-        activeTab === 'workforce' ? 'font-jakarta' : 'font-sans'
-      }`}
-    >
+    <header className="sticky top-0 z-20 bg-white border-b border-slate-200 px-8 py-5 flex items-center justify-between font-sans">
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
           <span>Project Meridian</span>
           <ChevronRight className="w-3 h-3 text-slate-300" />
           <span className="text-slate-500">{current.title}</span>
         </div>
-        <h1 className="text-2xl font-semibold text-slate-900 tracking-tight">
+        <h1
+          className={`text-2xl font-semibold text-slate-900 tracking-tight ${
+            activeTab === 'workforce' ? 'font-jakarta' : 'font-sans'
+          }`}
+        >
           {current.title}
         </h1>
         <p className="text-sm text-slate-500 line-clamp-1">

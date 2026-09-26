@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Scope Plus Jakarta Sans to the Workforce view and its header; keep other modules on the default sans stack so typography reinforces page hierarchy.
+- Plus Jakarta Sans is heading/number-only on the Workforce view: apply `font-jakarta` to the page title in TopHeader (only when activeTab === 'workforce'), section h2 headings, the "Live Operational Pulse" label, and big KPI numbers. All body text, tables, small labels, and other modules stay on the default sans stack so typography reinforces page hierarchy.
