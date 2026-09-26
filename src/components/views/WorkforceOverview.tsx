@@ -195,7 +195,7 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
   ];
 
   return (
-    <div className="space-y-6 pb-12">
+    <div className="font-jakarta space-y-6 pb-12">
       {/* ========================================================================= */}
       {/* 1. REFINED REAL-TIME OPERATIONAL PULSE BAR WITH HOVER TOOLTIPS           */}
       {/* ========================================================================= */}

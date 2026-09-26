@@ -1,4 +1,5 @@
 @import "tailwindcss" source(none);
+@import "@fontsource-variable/plus-jakarta-sans";
 @source "../src";
 
 /*
@@ -23,6 +24,8 @@
  * exposed for new work per the design-token list below.
  */
 @theme {
+  --font-jakarta: "Plus Jakarta Sans Variable", sans-serif;
+
   /* Core surfaces & neutrals */
   --color-navy: #061b2b;
   --color-navy-light: #0b2940;
