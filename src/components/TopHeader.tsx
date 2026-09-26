@@ -89,7 +89,11 @@ export const TopHeader: React.FC<TopHeaderProps> = ({ activeTab }) => {
   const current = TAB_TITLES[activeTab] || TAB_TITLES.workforce;
 
   return (
-    <header className="sticky top-0 z-20 bg-white border-b border-slate-200 px-8 py-5 flex items-center justify-between">
+    <header
+      className={`sticky top-0 z-20 bg-white border-b border-slate-200 px-8 py-5 flex items-center justify-between ${
+        activeTab === 'workforce' ? 'font-jakarta' : 'font-sans'
+      }`}
+    >
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
           <span>Project Meridian</span>

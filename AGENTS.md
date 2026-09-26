@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Scope Plus Jakarta Sans to the Workforce view and its header; keep other modules on the default sans stack so typography reinforces page hierarchy.
