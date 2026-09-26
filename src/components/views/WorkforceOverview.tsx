@@ -962,6 +962,33 @@ export const WorkforceOverview: React.FC<WorkforceOverviewProps> = ({ onNavigate
           </div>
         )}
       </div>
+
+      {/* ========================================================================= */}
+      {/* 5. METHODOLOGY & INDUSTRIAL RELATIONS NOTE                              */}
+      {/* ========================================================================= */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div className="rounded-xl border border-slate-200 bg-white p-4">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900">
+            <Info className="w-3.5 h-3.5 text-slate-500" />
+            <span>Dari mana angka biayanya</span>
+          </div>
+          <p className="text-[11px] text-slate-600 leading-relaxed mt-1.5">
+            Kami tidak mengakses data gaji. Semua hitungan biaya memakai angka acuan rata-rata
+            per golongan, jadi sensitif atau tidaknya data payroll tetap aman.
+          </p>
+        </div>
+
+        <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-900">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Kesepakatan dengan serikat pekerja</span>
+          </div>
+          <p className="text-[11px] text-emerald-900/80 leading-relaxed mt-1.5">
+            Tidak ada PHK sepihak. Setiap keputusan lewat dialog bipartit, pelatihan ulang tanpa
+            potong hak dasar, dan program keluar hanya jika pekerja sendiri yang memilih.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
