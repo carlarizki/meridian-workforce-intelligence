@@ -96,11 +96,8 @@ export const TopHeader: React.FC<TopHeaderProps> = ({ activeTab }) => {
           <ChevronRight className="w-3 h-3 text-slate-300" />
           <span className="text-slate-500">{current.title}</span>
         </div>
-        <h1
-          className={`text-2xl font-semibold text-slate-900 tracking-tight ${
-            activeTab === 'workforce' ? 'font-jakarta' : 'font-sans'
-          }`}
-        >
+        <h1 className="text-2xl font-semibold text-slate-900 tracking-tight font-jakarta">
+
           {current.title}
         </h1>
         <p className="text-sm text-slate-500 line-clamp-1">
