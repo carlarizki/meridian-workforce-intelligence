@@ -10,7 +10,6 @@ import {
   GraduationCap,
   BrainCircuit,
   TrendingUp,
-  Presentation,
   FileText,
   Calendar,
   Scale,
