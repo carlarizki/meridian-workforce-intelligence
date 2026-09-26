@@ -143,19 +143,6 @@ export const StrategicBriefingModal: React.FC<StrategicBriefingModalProps> = ({
                 </div>
               </button>
 
-              <button
-                onClick={() => handleNavigate('deck')}
-                className="p-3 text-left rounded-xl border border-amber-200 bg-amber-50/30 hover:bg-amber-50 transition-all flex flex-col justify-between space-y-2 group"
-              >
-                <div className="flex items-center justify-between">
-                  <Sparkles className="w-4 h-4 text-amber-600" />
-                  <span className="text-[10px] font-mono text-amber-700 font-bold">SLIDES</span>
-                </div>
-                <div>
-                  <div className="font-bold text-amber-950 group-hover:text-amber-800">Executive Deck</div>
-                  <div className="text-[11px] text-amber-800">Analisis 6 Celah Dokumen & Google Slides</div>
-                </div>
-              </button>
             </div>
           </div>
         </div>

@@ -17,12 +17,6 @@ const TAB_TITLES: Record<
     subtitle: 'From work insights to people outcomes.',
     screenNum: 0,
   },
-  deck: {
-    category: 'Presentasi',
-    title: 'Executive Deck',
-    subtitle: 'Gap dokumen klien vs. solusi Project Meridian.',
-    screenNum: 0,
-  },
   workforce: {
     category: 'Populasi',
     title: 'Workforce',

@@ -7,8 +7,6 @@ import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { Sidebar } from '@/components/Sidebar';
 import { TopHeader } from '@/components/TopHeader';
-import { ExecutiveDeckView } from '@/components/views/ExecutiveDeckView';
-import { PasswordGate } from '@/components/PasswordGate';
 import { WorkforceOverview } from '@/components/views/WorkforceOverview';
 import { AIExposureAnalysis } from '@/components/views/AIExposureAnalysis';
 import { JobArchitectureView } from '@/components/views/JobArchitectureView';
@@ -60,7 +58,6 @@ function MeridianApp() {
   const [isBriefingOpen, setIsBriefingOpen] = useState(false);
   const [isRoadmapOpen, setIsRoadmapOpen] = useState(false);
   const [isLegalOpen, setIsLegalOpen] = useState(false);
-  const [isDeckUnlocked, setIsDeckUnlocked] = useState(false);
 
   const handleSelectEmployee = (emp: EmployeeRecord) => {
     setSelectedEmployeeId(emp.id);
@@ -86,14 +83,6 @@ function MeridianApp() {
 
           {/* Viewport Content */}
           <main className="flex-1 p-6 max-w-7xl w-full mx-auto">
-            {activeTab === 'deck' && (
-              isDeckUnlocked ? (
-                <ExecutiveDeckView onNavigate={(tab) => setActiveTab(tab)} />
-              ) : (
-                <PasswordGate onUnlock={() => setIsDeckUnlocked(true)} />
-              )
-            )}
-
             {activeTab === 'workforce' && (
               <WorkforceOverview onNavigate={(tab) => setActiveTab(tab)} />
             )}
